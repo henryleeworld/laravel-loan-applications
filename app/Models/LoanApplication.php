@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Observers\LoanApplicationObserver;
 use App\Traits\Auditable;
 use App\Traits\MultiTenantModelTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use \DateTimeInterface;
+use DateTimeInterface;
 
 class LoanApplication extends Model
 {

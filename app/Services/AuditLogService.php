@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
-use App\LoanApplication;
-use App\Status;
-use App\User;
+use App\Models\LoanApplication;
+use App\Models\Status;
+use App\Models\User;
 use Illuminate\Support\Str;
 
 class AuditLogService

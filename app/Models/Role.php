@@ -1,16 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use \DateTimeInterface;
+use DateTimeInterface;
 
-class Permission extends Model
+class Role extends Model
 {
     use SoftDeletes;
 
-    public $table = 'permissions';
+    public $table = 'roles';
 
     protected $dates = [
         'created_at',
@@ -28,5 +28,15 @@ class Permission extends Model
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
+    }
+
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 }

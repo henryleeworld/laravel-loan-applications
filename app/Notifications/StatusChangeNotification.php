@@ -2,7 +2,7 @@
 
 namespace App\Notifications;
 
-use App\LoanApplication;
+use App\Models\LoanApplication;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;

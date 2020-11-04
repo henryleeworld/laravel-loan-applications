@@ -2,13 +2,13 @@
 
 namespace App\Observers;
 
-use App\LoanApplication;
+use App\Models\LoanApplication;
+use App\Models\Role;
+use App\Models\Status;
 use App\Notifications\NewApplicationNotification;
 use App\Notifications\SentForAnalysisNotification;
 use App\Notifications\StatusChangeNotification;
 use App\Notifications\SubmittedAnalysisNotification;
-use App\Role;
-use App\Status;
 use Illuminate\Support\Facades\Notification;
 
 class LoanApplicationObserver
