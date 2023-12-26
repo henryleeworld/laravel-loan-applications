@@ -8,7 +8,7 @@
         <div class="card-body">
             <form method="POST" action="{{ route("admin.loan-applications.analyze", $loanApplication) }}" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group">
+                <div class="mb-3">
                     <label for="description">{{ trans('cruds.comment.title_singular') }}</label>
                     <textarea class="form-control {{ $errors->has('comment_text') ? 'is-invalid' : '' }}" name="comment_text" id="comment_text">{{ old('comment_text') }}</textarea>
                     @if($errors->has('comment_text'))
@@ -17,7 +17,7 @@
                         </div>
                     @endif
                 </div>
-                <div class="form-group">
+                <div class="mb-3">
                     <button class="btn btn-success" name="approve" type="submit">
                         Approve
                     </button>

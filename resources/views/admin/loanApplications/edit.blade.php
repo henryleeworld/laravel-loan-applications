@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route("admin.loan-applications.update", [$loanApplication->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="loan_amount">{{ trans('cruds.loanApplication.fields.loan_amount') }}</label>
                 <input class="form-control {{ $errors->has('loan_amount') ? 'is-invalid' : '' }}" type="number" name="loan_amount" id="loan_amount" value="{{ old('loan_amount', $loanApplication->loan_amount) }}" step="0.01" required>
                 @if($errors->has('loan_amount'))
@@ -20,7 +20,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.loanApplication.fields.loan_amount_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="description">{{ trans('cruds.loanApplication.fields.description') }}</label>
                 <textarea class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{{ old('description', $loanApplication->description) }}</textarea>
                 @if($errors->has('description'))
@@ -30,7 +30,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.loanApplication.fields.description_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="status_id">{{ trans('cruds.loanApplication.fields.status') }}</label>
                 <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status_id" id="status_id">
                     @foreach($statuses as $id => $status)
@@ -44,7 +44,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.loanApplication.fields.status_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-0">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

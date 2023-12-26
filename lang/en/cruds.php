@@ -117,6 +117,8 @@ return [
             'description_helper' => '',
             'status'             => 'Status',
             'status_helper'      => '',
+            'send_to'            => 'Send to',
+            'submit_analysis'    => 'Submit analysis',
             'analyst'            => 'Analyst',
             'analyst_helper'     => '',
             'cfo'                => 'CFO',

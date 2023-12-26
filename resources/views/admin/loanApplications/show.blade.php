@@ -7,8 +7,8 @@
     </div>
 
     <div class="card-body">
-        <div class="form-group">
-            <div class="form-group">
+        <div class="mb-3">
+            <div class="mb-3">
                 <a class="btn btn-default" href="{{ route('admin.loan-applications.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
@@ -107,19 +107,19 @@
                 </table>
             @endif
 
-            <div class="form-group">
+            <div class="mb-3">
                 @if($user->is_admin && in_array($loanApplication->status_id, [1, 3, 4]))
                     <a class="btn btn-success" href="{{ route('admin.loan-applications.showSend', $loanApplication->id) }}">
-                        Send to
+                        {{ trans('cruds.loanApplication.fields.send_to') }}
                         @if($loanApplication->status_id == 1)
-                            analyst
+                            {{ trans('cruds.loanApplication.fields.analyst') }}
                         @else
-                            CFO
+                            {{ trans('cruds.loanApplication.fields.cfo') }}
                         @endif
                     </a>
                 @elseif(($user->is_analyst && $loanApplication->status_id == 2) || ($user->is_cfo && $loanApplication->status_id == 5))
                     <a class="btn btn-success" href="{{ route('admin.loan-applications.showAnalyze', $loanApplication->id) }}">
-                        Submit analysis
+                        {{ trans('cruds.loanApplication.fields.submit_analysis') }}
                     </a>
                 @endif
 
@@ -137,7 +137,7 @@
                     </form>
                 @endcan
             </div>
-            <div class="form-group">
+            <div class="mb-0">
                 <a class="btn btn-default" href="{{ route('admin.loan-applications.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>

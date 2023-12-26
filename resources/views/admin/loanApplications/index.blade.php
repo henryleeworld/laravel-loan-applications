@@ -76,16 +76,16 @@
                             <td>
                                 @if($user->is_admin && in_array($loanApplication->status_id, [1, 3, 4]))
                                     <a class="btn btn-xs btn-success" href="{{ route('admin.loan-applications.showSend', $loanApplication->id) }}">
-                                        Send to
+                                        {{ trans('cruds.loanApplication.fields.send_to') }}
                                         @if($loanApplication->status_id == 1)
-                                            analyst
+                                            {{ trans('cruds.loanApplication.fields.analyst') }}
                                         @else
-                                            CFO
+                                            {{ trans('cruds.loanApplication.fields.cfo') }}
                                         @endif
                                     </a>
                                 @elseif(($user->is_analyst && $loanApplication->status_id == 2) || ($user->is_cfo && $loanApplication->status_id == 5))
                                     <a class="btn btn-xs btn-success" href="{{ route('admin.loan-applications.showAnalyze', $loanApplication->id) }}">
-                                        Submit analysis
+                                        {{ trans('cruds.loanApplication.fields.submit_analysis') }}
                                     </a>
                                 @endif
 

@@ -117,6 +117,8 @@ return [
             'description_helper' => '',
             'status'             => '狀態',
             'status_helper'      => '',
+            'send_to'            => '寄給',
+            'submit_analysis'    => '送出分析',
             'analyst'            => '分析員',
             'analyst_helper'     => '',
             'cfo'                => '財務長',
