@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,21 +15,21 @@ class UsersTableSeeder extends Seeder
                 'id'             => 1,
                 'name'           => 'Trevor Admin Stanbridge',
                 'email'          => 'admin@admin.com',
-                'password'       => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'password'       => Hash::make('password'),
                 'remember_token' => null,
             ],
             [
                 'id'             => 2,
                 'name'           => 'John Analyst Stone',
                 'email'          => 'analyst@analyst.com',
-                'password'       => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'password'       => Hash::make('password'),
                 'remember_token' => null,
             ],
             [
                 'id'             => 3,
                 'name'           => 'Mia CFO Wong',
                 'email'          => 'cfo@cfo.com',
-                'password'       => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'password'       => Hash::make('password'),
                 'remember_token' => null,
             ],
         ];
